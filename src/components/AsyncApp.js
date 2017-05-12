@@ -16,11 +16,13 @@ class AsyncApp extends Component {
   }
 
   updateList = (e) => {
+    if (e.target.value === ""){ return };
+    
     let query = e.target.value;
-    let req = function(){
+    let reqFn = function(){
       axios.get(`https://typeahead-js-twitter-api-proxy.herokuapp.com/demo/search?q=${query}`)
         .then((response) => {
-          //console.log(response);
+          console.log(response);
           let getRq = this.props.onUpdateList.bind(this, response.data);
           getRq(); // or: //this.props.onUpdateList(response.data);
         })
@@ -28,7 +30,10 @@ class AsyncApp extends Component {
           console.log(error);
         });
     }.bind(this);
-    setTimeout(req, 500);
+
+    //setTimeout(reqFn, 1000);
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(reqFn, 1000);
   }
 
   render() {

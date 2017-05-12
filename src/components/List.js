@@ -6,12 +6,13 @@ export default class List extends Component {
     return (
       <ul>
         {
-          this.props.list.map(
-            (el, i) => <li key={i}>{el.description ? `${el.description}` : `id: ${el.id}`}
+          this.props.list.map((el, i) =>
+            <li key={i}>{el.name} {el.url ? <a href={`${el.url}`} target='_blank'>Link to url</a> : <span style={{color:"lightgray"}}>[ No link ]</span> }
               <br />
-              {el.url ? <a href={`${el.url}`} target='_blank'>Link to url</a> : <span style={{color:"lightgray"}}>[ No link ]</span> }
-              {" "}
-              {el.name}
+              <img src={el.profile_image_url_https} alt="wtf?"
+                style={{width:"52px", height:"52px", border:"2px solid #ccd6dd", borderRadius:"5px"}} />
+              <br />
+              {el.description ? `${el.description}` : `id: ${el.id}`}
             </li>
           )
         }
