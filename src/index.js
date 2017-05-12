@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import AsyncApp from './components/AsyncApp';
 import stt from './reducers';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(
   stt,

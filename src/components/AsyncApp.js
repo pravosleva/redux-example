@@ -17,7 +17,7 @@ class AsyncApp extends Component {
 
   updateList = (e) => {
     if (e.target.value === ""){ return };
-    
+
     let query = e.target.value;
     let reqFn = function(){
       axios.get(`https://typeahead-js-twitter-api-proxy.herokuapp.com/demo/search?q=${query}`)
@@ -39,7 +39,7 @@ class AsyncApp extends Component {
   render() {
     const { obj, onIncrement, onDecrement } = this.props;
     return (
-      <div>
+      <div className="container">
 
         <h1>Test 0</h1>
         Clicked: {obj.counter} times
@@ -56,11 +56,13 @@ class AsyncApp extends Component {
         <Modal />
 
         <h1>Test 2</h1>
-        Async test
-        {" "}
-        <input placeholder="query..." onChange={this.updateList} />
-        {" "}
-        Based on <a href="https://twitter.github.io/typeahead.js/" target="_blank">this example</a>
+        Async test based on <a href="https://twitter.github.io/typeahead.js/" target="_blank">this example</a>
+        <div className="row">
+          <div className="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+            <input className="form-control" placeholder="query..." onChange={this.updateList} />
+          </div>
+        </div>
+
         <List list={obj.list} />
 
       </div>
