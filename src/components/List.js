@@ -13,6 +13,7 @@ export default class List extends Component {
                 style={{width:"52px", height:"52px", border:"2px solid #ccd6dd", borderRadius:"5px"}} />
               <br />
               {el.description ? `${el.description}` : `id: ${el.id}`}
+              <hr />
             </li>
           )
         }

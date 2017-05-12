@@ -59,7 +59,7 @@ class AsyncApp extends Component {
         Async test based on <a href="https://twitter.github.io/typeahead.js/" target="_blank">this example</a>
         <div className="row">
           <div className="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-            <input className="form-control" placeholder="query..." onChange={this.updateList} />
+            <input style={{marginTop:"10px", marginBottom:"10px"}} className="form-control" placeholder="query..." onChange={this.updateList} />
           </div>
         </div>
         <List list={obj.list} />
