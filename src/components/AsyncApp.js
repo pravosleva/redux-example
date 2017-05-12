@@ -62,7 +62,6 @@ class AsyncApp extends Component {
             <input className="form-control" placeholder="query..." onChange={this.updateList} />
           </div>
         </div>
-
         <List list={obj.list} />
 
       </div>
